@@ -54,8 +54,8 @@ We provide two dataset splits: Development (Dev) and Test, each designed to faci
 Here is the scores on test set (standard) results of CMAT.
 ![Leaderboard Image2](./assets/lb.png)
 
-![Leaderboard Image2](./assets/overall score.png)
 TinyAgent demonstrates outstanding performance, comparable to that of GPT-3.5. 
+![Leaderboard Image2](./assets/overall score.png)
 
 ![Leaderboard Image4](./assets/db.png)
 Comparative study of Llama-2-7b and TinyAgent-7b in DataBase cases. (1) In DataBase tasks with a reflection mechanism, Llama-2-7b still made errors after reflection, while TinyAgent-7b adjusted its operations after reflecting on its first failed attempt. (2) Without a reflection mechanism, TinyAgent-7b repeated the same operation and ultimately failed to complete the task.
