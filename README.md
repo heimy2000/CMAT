@@ -1,7 +1,7 @@
 # CMAT: A Multi-Agent Collaboration Tuning Framework for Enhancing Small Language Models
 
 <div align="center" style="text-align: center;">
-  <a href=""">[Model]              </a>
+  <a href="https://modelscope.cn/models/heimy2000/tinyagent/files">[Model]              </a>
   <a href="">[Paper]</a>
   <a href="">[Dataset]</a>
 </div>
