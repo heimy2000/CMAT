@@ -54,8 +54,7 @@ We provide two dataset splits: Development (Dev) and Test, each designed to faci
 Here is the scores on test set (standard) results of CMAT.
 ![Leaderboard Image2](./assets/lb.png)
 
-![Leaderboard Image3](./assets/overall score.png)
-
+![Leaderboard Image2](./assets/overall score.png)
 TinyAgent demonstrates outstanding performance, comparable to that of GPT-3.5. 
 
 ![Leaderboard Image4](./assets/db.png)
