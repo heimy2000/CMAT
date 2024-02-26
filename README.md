@@ -55,6 +55,7 @@ Here is the scores on test set (standard) results of CMAT.
 ![Leaderboard Image2](./assets/lb.png)
 
 ![score Image1](./assets/score.png)
+
 TinyAgent demonstrates outstanding performance, comparable to that of GPT-3.5. 
 
 ![Leaderboard Image4](./assets/db.png)
