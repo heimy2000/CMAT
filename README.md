@@ -1,7 +1,7 @@
 # CMAT: A Multi-Agent Collaboration Tuning Framework for Enhancing Small Language Models
 
 <div align="center" style="text-align: center;">
-  <a href="" style="margin-right: 40px;">[Model]              </a>
+  <a href=""">[Model]              </a>
   <a href="">[Paper]</a>
   <a href="">[Dataset]</a>
 </div>
