@@ -11,7 +11,7 @@ Welcome to CMAT! The main contributions of our work are as follows:
 In the CMAT framework, the user assigns tasks to an assistant, which generates SQL commands based on short-term and long-term memories: short-term memory provides immediate context from trajectory history, while self-reflective outputs are stored as long-term memory. The checker verifies the correctness of SQL commands before they are executed in the environment.
 
 If you're looking for an older version of a similar project, you can find it here.
-Building upon a solid foundation, we've made several enhancements in Memory-agentBench:
+Building upon a solid foundation, we've made several enhancements in CMAT:
 - **Revamped Framework Architecture**: We've redesigned the architecture to be more user-friendly and extendable, ensuring that users can easily integrate and experiment with memory capabilities in their models.
 - **Task Settings Adjustments**: Some task configurations have been fine-tuned to better challenge and demonstrate the enhanced capabilities of models equipped with memory functions.
 - **Expanded Model Testing**: Additional test results for a wider range of models are now available, showcasing the impact of memory integration on model performance.
@@ -73,7 +73,7 @@ and [Program Entrance Guide](docs/Entrance_en.md).
 Clone this repo and install the dependencies.
 
 ```bash
-cd Memory-agentBench
+cd CMAT
 conda create -n agent-bench python=3.9
 conda activate agent-bench
 pip install -r requirements.txt
