@@ -1,10 +1,16 @@
-# CMAT
+# CMAT: A Multi-Agent Collaboration Tuning Framework for Enhancing Small Language Models
 
-# Memory-agentBench
+## 📌Introducing CMAT 🎉
 
+Welcome to CMAT! The main contributions of our work are as follows:
+- We propose the CMAT framework which represents an innovative approach that allows for dynamic and real-time memory updates within multi-agent systems.
+- We design a novel role-playing mechanism for precise task allocation and enhanced agent communication, significantly boosting overall performance and cooperation.
+- We evaluated the fine-tuned TinyAgent models across multiple agent tasks, finding that in certain scenarios, their performance rivals that of advanced LLMs like GPT-4 and agentlm ~\cite{zeng2023agenttuning}, demonstrating the potential efficiency and capabilities of compact models.
 
-## 📌Introducing Memory-agentBench 🎉
-Welcome to Memory-agentBench! If you're looking for an older version of a similar project, you can find it here.
+![Framework Image1](./assets/pt2.png)
+In the CMAT framework, the user assigns tasks to an assistant, which generates SQL commands based on short-term and long-term memories: short-term memory provides immediate context from trajectory history, while self-reflective outputs are stored as long-term memory. The checker verifies the correctness of SQL commands before they are executed in the environment.
+
+If you're looking for an older version of a similar project, you can find it here.
 Building upon a solid foundation, we've made several enhancements in Memory-agentBench:
 - **Revamped Framework Architecture**: We've redesigned the architecture to be more user-friendly and extendable, ensuring that users can easily integrate and experiment with memory capabilities in their models.
 - **Task Settings Adjustments**: Some task configurations have been fine-tuned to better challenge and demonstrate the enhanced capabilities of models equipped with memory functions.
@@ -12,13 +18,10 @@ Building upon a solid foundation, we've made several enhancements in Memory-agen
 - **Comprehensive Data Release**: Both Development and Test datasets have been fully released, providing ample material for rigorous testing and benchmarking.
 Moreover, the introduction of a memory mechanism aims to significantly boost the agent's performance across diverse tasks. This upgrade allows agents to remember and leverage past interactions, enabling more effective handling of sequential and complex challenges.
 
-# Memory-agentBench: Evaluating LLMs as Agents
+# CMAT: Evaluating LLMs as Agents
 
-
-
-**Memory-agentBench** is the first benchmark designed to evaluate **LLM-as-Agent** across a diverse spectrum of different
-environments. It encompasses 8 distinct environments to provide a more comprehensive evaluation of the LLMs' ability to
-operate as autonomous agents in various scenarios. These environments include 5 freshly created domains, namely
+The testing environment of CMAT encompasses 8 distinct environments to provide a more comprehensive evaluation of the LLMs' ability to operate as autonomous agents in various scenarios. 
+These environments include 5 freshly created domains, namely
 
 -   Operating System (OS)
 -   Database (DB)
@@ -48,10 +51,14 @@ We provide two dataset splits: Development (Dev) and Test, each designed to faci
 
 ## Leaderboard
 
-Here is the scores on test set (standard) results of Memory-agentBench.
+Here is the scores on test set (standard) results of CMAT.
+![Leaderboard Image2](./assets/lb.png)
 
+![Leaderboard Image3](./assets/overall score.png)
+TinyAgent demonstrates outstanding performance, comparable to that of GPT-3.5. 
 
-
+![Leaderboard Image3](./assets/db.png)
+Comparative study of Llama-2-7b and TinyAgent-7b in DataBase cases. (1) In DataBase tasks with a reflection mechanism, Llama-2-7b still made errors after reflection, while TinyAgent-7b adjusted its operations after reflecting on its first failed attempt. (2) Without a reflection mechanism, TinyAgent-7b repeated the same operation and ultimately failed to complete the task.
 
 ## Quick Start
 
