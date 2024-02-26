@@ -10,6 +10,9 @@ Welcome to CMAT! The main contributions of our work are as follows:
 ![Framework Image1](./assets/pt2.png)
 In the CMAT framework, the user assigns tasks to an assistant, which generates SQL commands based on short-term and long-term memories: short-term memory provides immediate context from trajectory history, while self-reflective outputs are stored as long-term memory. The checker verifies the correctness of SQL commands before they are executed in the environment.
 
+![score Image1](./assets/overall score.png)
+TinyAgent demonstrates outstanding performance, comparable to that of GPT-3.5. 
+
 If you're looking for an older version of a similar project, you can find it here.
 Building upon a solid foundation, we've made several enhancements in Memory-agentBench:
 - **Revamped Framework Architecture**: We've redesigned the architecture to be more user-friendly and extendable, ensuring that users can easily integrate and experiment with memory capabilities in their models.
@@ -53,9 +56,6 @@ We provide two dataset splits: Development (Dev) and Test, each designed to faci
 
 Here is the scores on test set (standard) results of CMAT.
 ![Leaderboard Image2](./assets/lb.png)
-
-![Leaderboard Image4](./assets/overall score.png)
-TinyAgent demonstrates outstanding performance, comparable to that of GPT-3.5. 
 
 ![Leaderboard Image4](./assets/db.png)
 Comparative study of Llama-2-7b and TinyAgent-7b in DataBase cases. (1) In DataBase tasks with a reflection mechanism, Llama-2-7b still made errors after reflection, while TinyAgent-7b adjusted its operations after reflecting on its first failed attempt. (2) Without a reflection mechanism, TinyAgent-7b repeated the same operation and ultimately failed to complete the task.
