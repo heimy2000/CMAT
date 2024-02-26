@@ -79,7 +79,7 @@ class Assigner:
         self.started_count = 0
         self.running_count = 0
 
-        self.shared_memory = SharedMemory()  # 初始化共享记忆
+        self.shared_memory = SharedMemory()  # Initialize shared memory
 
         # Step 1. Check if output folder exists (resume or create)
 
@@ -168,7 +168,7 @@ class Assigner:
         # Create agents
 
         for agent in self.remaining_tasks:
-            # 创建代理实例并设置共享记忆
+            # Create an agent instance and set up shared memory
             self.agents[agent] = AgentClient.create_with_shared_memory(
                 self.config.definition.agent[agent],
                 self.shared_memory
@@ -178,21 +178,21 @@ class Assigner:
     def get_output_dir(self, agent: str, task: str) -> str:
         return os.path.join(self.config.output, agent, task)
     def calculate_agent_weight(self, agent, shared_history):
-        # 根据智能体的历史数据来计算其权重
+        # Calculate the weight of the agent based on its historical data
         if not shared_history:
-            return 1  # 如果没有历史数据，返回默认权重1
+            return 1  # If there is no historical data, return the default weight of 1
 
-        # 计算任务的总数和成功的任务数
+        # Count the total number of tasks and the number of successful tasks
         total_tasks = len(shared_history)
         successful_tasks = sum(1 for task_dict in shared_history 
                                if 'output' in task_dict 
                                and task_dict['output'] 
                                and task_dict['output'].get('status') == SampleStatus.COMPLETED.value)
-        # 计算成功率
+        # Calculate success rate
         success_rate = successful_tasks / total_tasks if total_tasks > 0 else 0
 
-        # 将成功率转换为权重
-        weight = success_rate  # 使用成功率作为权重
+        # Convert success rate to weight
+        weight = success_rate  # Use success rate as weight
 
         return weight
 
@@ -202,7 +202,7 @@ class Assigner:
         agent_node_index = {}
         task_node_index = {}
 
-        # 将智能体和任务添加到节点列表中，并创建索引
+        # Add agents and tasks to the node list and create an index
         for agent in self.agents:
             node_list.append(agent)
             agent_node_index[agent] = len(node_list) - 1
@@ -218,14 +218,14 @@ class Assigner:
 
             edges = {}
             for agent in self.agents:
-                # 获取共享记忆
+                # Get shared memory
                 shared_history = self.agents[agent].shared_memory.retrieve(self.agents[agent].__class__.__name__)
                 weight = self.calculate_agent_weight(agent, shared_history)
                 edges[(0, agent_node_index[agent])] = weight
             for task in self.tasks:
                 edges[(task_node_index[task], 1)] = self.free_worker.task[task]
 
-            # 计算剩余样本数量
+            # Calculate the number of remaining samples
             total_remaining_samples = 0
             for agent in self.remaining_tasks:
                 for task in self.remaining_tasks[agent]:
@@ -261,7 +261,7 @@ class Assigner:
 
                     task_data = self.tasks[task_name].run_sample(index, self.agents[agent_name])
                     new_data = task_data 
-                    # 更新共享记忆
+                    # Update shared memory
                     self.agents[agent_name].shared_memory.store(self.agents[agent_name].__class__.__name__, new_data)
 
                     yield agent_name, task_name, index
